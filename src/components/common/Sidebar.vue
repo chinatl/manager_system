@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar">
-        <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
+        <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router >
             <template v-for="item in items">
                 <template v-if="item.subs">
                     <el-submenu :index="item.index">
@@ -25,57 +25,97 @@
             return {
                 items: [
                     {
-                        icon: 'el-icon-setting',
-                        index: 'readme',
-                        title: '自述'
-                    },
-                    {
                         icon: 'el-icon-menu',
-                        index: '2',
-                        title: '表格',
+                        index: 'JYPX1',
+                        title: '新人业绩报表',
                         subs: [
                             {
-                                index: 'basetable',
-                                title: '基础表格'
+                                index: 'JYPX1_01',
+                                title: '新人培训覆盖统计'
                             },
                             {
-                                index: 'vuetable',
-                                title: 'Vue表格组件'
-                            }
+                                index: 'JYPX1_02',
+                                title: '新人主险件数统计'
+                            },
+                            {
+                                index: 'JYPX1_03',
+                                title: '新人主险举绩统计'
+                            },
+                            {
+                                index: 'JYPX1_04',
+                                title: '新人短线举绩统计'
+                            },
+                            {
+                                index: 'JYPX1_05',
+                                title: '新人综合举绩'
+                            },
+                            {
+                                index: 'JYPX1_06',
+                                title: '新人津贴获取统计'
+                            },
+                            {
+                                index: 'JYPX1_07',
+                                title: '新人增员统计'
+                            },
+                            {
+                                index: 'JYPX1_08',
+                                title: '新人增员覆盖统计'
+                            },
+                            {
+                                index: 'JYPX1_09',
+                                title: '新人晋升留存数据统计',
+                            },
                         ]
                     },
                     {
                         icon: 'el-icon-date',
                         index: '3',
-                        title: '表单',
+                        title: '新人阶段成长报表',
                         subs: [
                             {
-                                index: 'baseform',
-                                title: '基本表单'
+                                index: 'JYPX2_01',
+                                title: '0-3月新人统计'
                             },
                             {
-                                index: 'vueeditor',
-                                title: '编辑器'
+                                index: 'JYPX2_02',
+                                title: '4-6月新人统计'
                             },
                             {
-                                index: 'markdown',
-                                title: 'markdown'
+                                index: 'JYPX2_03',
+                                title: '7-12月新人统计'
                             },
+                        ]
+                    },            
+					{
+                        icon: 'el-icon-menu',
+                        index: '4',
+                        title: '培训覆盖情况报表',
+                        subs: [
                             {
-                                index: 'upload',
-                                title: '文件上传'
-                            }
+                                index: 'JYPX3',
+                                title: '培训覆盖率报表'
+                            },
                         ]
                     },
                     {
                         icon: 'el-icon-star-on',
                         index: 'basecharts',
-                        title: '图表'
-                    },
-                    {
-                        icon: 'el-icon-upload2',
-                        index: 'drag',
-                        title: '拖拽'
+                        title: '培训班报表',
+						  subs: [
+                            {
+                                index: 'none1',
+                                title: '创业签约培训班签约率追踪'
+                            }, {
+                                index: 'none2',
+                                title: '创业启航培训班效绩追踪'
+                            }, {
+                                index: 'none3',
+                                title: '学员签到情况'
+                            }, {
+                                index: 'none4',
+                                title: '培训签到整体情况'
+                            }
+                        ]
                     }
                 ]
             }
@@ -88,7 +128,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     .sidebar{
         display: block;
         position: absolute;
@@ -96,9 +136,21 @@
         left: 0;
         top: 70px;
         bottom:0;
-        background: #2E363F;
+        background: red;
     }
     .sidebar > ul {
         height:100%;
     }
+	.is-opened li.is-active {
+		background-color: rgba(255,255,255,.28);
+	}
+	.el-menu--dark {
+		background-color: #242f42;
+	}
+	.el-menu-item {
+		background-color: #324157
+	}
+	.el-menu--dark .el-submenu__title {
+		color:#fff
+	}
 </style>

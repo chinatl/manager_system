@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <div class="logo">后台管理系统</div>
+        <div class="logo">国寿企业家成长管理系统</div>
         <div class="user-info">
             <el-dropdown trigger="click" @command="handleCommand">
                 <span class="el-dropdown-link">
@@ -18,7 +18,7 @@
     export default {
         data() {
             return {
-                name: 'linxin'
+                name: '用户'
             }
         },
         computed:{
@@ -30,7 +30,9 @@
         methods:{
             handleCommand(command) {
                 if(command == 'loginout'){
-                    localStorage.removeItem('ms_username')
+                    localStorage.removeItem('ms_username');
+                    localStorage.removeItem('ms_token');
+                    localStorage.removeItem('uuuname');
                     this.$router.push('/login');
                 }
             }

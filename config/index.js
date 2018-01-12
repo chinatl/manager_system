@@ -23,22 +23,22 @@ module.exports = {
     },
     dev: {
         env: require('./dev.env'),
-        port: 8080,
+        port: 3001,
         autoOpenBrowser: true,
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         proxyTable: {
             '/api':{
-                target:'http://jsonplaceholder.typicode.com',
+                target:'http://10.184.1.8',
                 changeOrigin:true,
-                pathRewrite:{
-                    '/api':''
-                }
+                // pathRewrite:{
+                //     '':''
+                // }
             },
-            '/ms':{
-                target: 'https://www.easy-mock.com/mock/592501a391470c0ac1fab128',
-                changeOrigin: true
-            }
+            // '/ms':{
+            //     target: 'https://www.easy-mock.com/mock/592501a391470c0ac1fab128',
+            //     changeOrigin: true
+            // }
         },
         // CSS Sourcemaps off by default because relative paths are "buggy"
         // with this option, according to the CSS-Loader README
