@@ -5,6 +5,6 @@ const app = express();
 var staticPath = path.join(__dirname + '/../dist');
 console.log(staticPath)
 app.use(express.static(staticPath));
-app.listen(8080,'192.168.1.239',()=>{
+app.listen(8080,()=>{
     console.log('running....');
 });

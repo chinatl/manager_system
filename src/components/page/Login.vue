@@ -66,10 +66,7 @@
 				const self = this;
 				this.loginTip = '登陆中';
 				var flag = true;
-				setTimeout(() => {
-					this.loginTip = '登陆失败，请重新登录';
-					flag = true
-				}, 3000)
+				var _this = this;
 				self.$refs[formName].validate((valid) => {
 					if (valid && flag) {
 						self.$axios({
@@ -99,6 +96,8 @@
 							})
 							.catch(function(err) {
 								console.log(err);
+								_this.loginTip = '登陆失败，请重新登录';
+								flag = true
 							})
 					} else {
 						console.log('error submit!!');
